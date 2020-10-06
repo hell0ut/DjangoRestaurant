@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block css %}
+    {% endblock %}
+    <link href="{% static 'home/perfect.css' %}" rel="stylesheet" type="text/css"  >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <table class="anus">
+        <tr>
+<td> {{ time }}</td>
+<td><a href="{% url 'menu:main' %}">меню</a></td>
+<td><a href="{% url 'info:main' %}">инфа лол</a></td>
+<td><a href="{% url 'home:main' %}">домой</a></td>
+<td><a href="{% url 'home:main' %}">логин</a></td>
+
+
+        </tr>
+    </table>
+</div>
+<div class="dasha">
+    <table>
+        <tr>
+        <td><img class="dasha_img" src={% static 'home/Dasha.jpg' %}></td>
+
+        </tr>
+                        <tr>
+                <td><strong class="dasha2">ДОСТАВКА ЗАКАЗАТЬ:<br>8-800-555-35-35</strong></td>
+            </tr>
+        <tr>
+                <td><img class="dasha_img" src={% static 'home/Dasha.jpg' %}></td>
+            </tr>
+
+
+    </table>
+</div>
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+</body>
+</html>

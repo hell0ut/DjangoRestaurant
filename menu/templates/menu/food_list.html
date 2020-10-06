@@ -1,0 +1,38 @@
+
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+{% if object_list %}
+
+<table class="menu">
+    <tr class="dasha2">
+   <td> <strong>NAME</strong></td>
+    <td>    <i>LOOK</i></td>
+         <td>NAME</td>
+  <td>LOOK</td>
+</tr>
+{% for food in object_list %}
+
+{% if forloop.counter|divisibleby:2 %}
+               <td width="20px" class="big"> <strong>{{ food.name }}</strong></td>
+<td width="200px"><a href="{% url 'menu:food_detail' food.category.id food.id%}">  <img  class="food_img" src="{{ food.picture.url }}"></a></td>
+
+</tr>
+{% else %}
+            <tr>
+                       <td width="20px" class="big"> <strong>{{ food.name }}</strong></td>
+<td width="200px"><a href="{% url 'menu:food_detail' food.category.id food.id%}">  <img  class="food_img" src="{{ food.picture.url }}"></a></td>
+
+        {% endif %}
+
+{% empty %}
+    <li>No food yet.</li>
+{% endfor %}
+</table>
+{% else %}
+    <div class="true">НЕТ НИХУЯ) НЕ ДОСТАВИЛИ ЕЩЕ</div>
+    {% endif %}
+
+{% endblock %}
+{% block css %}
+    {% endblock %}

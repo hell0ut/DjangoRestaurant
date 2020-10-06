@@ -1,0 +1,25 @@
+
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+<div class="true">
+<strong>Назва:</strong>{{ object.product }}<br>
+<strong>сколько штук:</strong>{{ object.quanity }}<br>
+<strong>когда:</strong>{{ object.created_at }}<br>
+
+Описание):<br>
+    {{ object.desc }}<br>
+
+<a href="{% url 'menu:food_list' object.category.id %}">НАЗАД В КАТЕГОРИЮ</a><br>
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}

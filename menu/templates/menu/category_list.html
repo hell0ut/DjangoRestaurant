@@ -1,0 +1,35 @@
+
+{% extends 'home/main.html' %}
+{% load static %}
+{% block content %}
+    {% if category_list %}
+    <table class="menu">
+    <tr class="dasha2">
+</tr>
+
+{% for category in object_list %}
+
+{% if forloop.counter|divisibleby:2 %}
+            <td> <a href="{% url 'menu:food_list' category.id %}">{{ category }}</a></td>
+</tr>
+{% else %}
+            <tr>
+         <td> <a href="{% url 'menu:food_list' category.id %}">{{ category }}</a></td>
+
+        {% endif %}
+{% empty %}
+    <li>No Categories yet.</li>
+{% endfor %}
+</table>
+
+        {% else %}
+        <div class="true">Нет нихуя)</div>
+    {% endif %}
+
+
+
+
+
+{% endblock %}
+{% block css %}
+    {% endblock %}
